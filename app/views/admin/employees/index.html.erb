@@ -1,0 +1,40 @@
+<% include_stylesheet 'admin/employees/employees' %>
+<h1>Employees</h1>
+
+<p>You can enter employees here.</p>
+
+<table cellspacing="0" cellpadding="0" border="0" class="index" id="employees">
+
+  <thead>
+    <tr>
+	  <th> </th>
+      <th>Employee</th>
+      <th>Title</th>
+	  <th>Email</th>
+	  <th>Area</th>
+	  <th>Order</th>
+      <th class="modify">Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr id="employee_<%= employee.id %>">
+	    <td><%= image_tag(employee.profile_icon.try(:public_filename) || "") %> </td>
+        <td><%= link_to employee.name, edit_admin_employee_url(:id => employee.id) %></td>
+        <td><%=h employee.title %> </td>
+		<td><%=h employee.email %> </td>
+		<td><%= employee.management ? "Management and Office Staff" : "Interventionist" %></td>
+		<td><%= link_to_remote "up", :url => {:action => :toggle_order, :id => employee.id, :order => :up } %> | 
+			<%= link_to_remote "down", :url => {:action => :toggle_order, :id => employee.id, :order => :down } %>
+	    </td>
+        <td class="remove">
+          <%= link_to image('remove', :alt => 'Remove link'), remove_admin_employee_url(:id => employee.id) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<p><%= link_to image("employees/employees-link", :alt => "New Employee"), {:action => :new} %></p>

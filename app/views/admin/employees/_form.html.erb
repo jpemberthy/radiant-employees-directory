@@ -1,0 +1,115 @@
+<% content_for :head do %>
+<% include_javascript 'employee_attachments' %>
+<% end %>
+
+<% content_for :page_scripts do %>
+document.observe('dom:loaded', function() {
+	tabControl = new TabControl('tab-control');
+    tabControl.addTab('tab-1', 'profile', 'page-profile');
+    tabControl.addTab('tab-2', 'extended profile', 'page-extended-profile');
+	tabControl.select('tab-1');
+})
+<% end %>
+
+<% form_for [:admin, @employee], :html => {:multipart => true} do |f| %>
+<div class="form-area">
+	<table class="fieldset">
+		<tbody>
+			<tr>
+				<th class="label">
+					<label for="employee_title">Title</label>
+				</th>
+				<td class="field">
+					<%= f.text_field "title", :maxlength => 255, :size => 30, :class => "textbox" %>
+				</td>
+			</tr>
+			<tr>
+				<th class="label">
+					<label for="first_name">First Name</label>
+				</th>
+				<td class="field">
+					<%= f.text_field "first_name", :maxlength => 255, :size => 30, :class => "textbox" %>
+				</td>
+			</tr>
+			<tr>
+				<th class="label">
+					<label for="last_name">Last Name</label>
+				</th>
+				<td class="field">
+					<%= f.text_field "last_name", :maxlength => 255, :size => 30, :class => "textbox" %>
+				</td>
+			</tr>
+			<tr>
+				<th class="label">
+					<label for="email">Email</label>
+				</th>
+				<td class="field">
+					<%= f.text_field "email", :maxlength => 255, :size => 30, :class => "textbox" %>
+				</td>
+			</tr>
+			<tr>
+				<th class="label">
+					<label for="management">Is this employee a manager?</label>
+				</th>
+				<td>
+					<%= f.check_box "management" %>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="tab-control">
+		<div id="tabs" class="tabs">
+		</div>
+		<div id="pages" class="pages">
+			<div id="page-profile" class="page">
+				<div id="part-profile" class="part">
+					<%= f.text_area "profile", :size => 30, :class => "textarea", :style => "width: 100%;" %>
+				</div>
+			</div>
+			<div id="page-extended-profile" class="page">
+				<div id="part-extended-profile" class="part">
+					<%= f.text_area "extended_profile", :size => 30, :class => "textarea", :style => "width: 100%;" %>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+	
+
+  <div id="attachments">
+    <div class="toolbar">
+	  <img src="/images/admin/plus.png" alt="Add"/>
+	</div>
+	<h3>Attachments</h3>
+
+	<div style="clear: both;"> </div>
+	
+	<%= javascript_tag "var auth_token = '#{form_authenticity_token}';" %>
+	
+	<ul id="attachment_list">
+		<%= render :partial => "employee_attachment", :collection => @employee.page_attachments %>
+	</ul>
+	
+	<% setup_page_attachment_for(@employee) %>
+	<% f.fields_for :page_attachments do |attachment_form| %>
+		    <div class="attachment-upload">
+			  <p class="title">Upload file</p>
+			  <%= attachment_form.label :title %>
+			  <%= attachment_form.text_field :title %>
+				 
+			 <%= attachment_form.label :description %>
+			 <%= attachment_form.text_field :description %>
+	 
+			 <%= attachment_form.label :file %>
+			 <%= attachment_form.file_field :uploaded_data %>
+			 <img alt="cancel" src="/images/admin/minus.png"/>
+		    </div>
+	<% end %>
+	
+  </div>
+	
+	
+<p class="buttons">
+	<%= save_model_button(@employee) %> <%= save_model_and_continue_editing_button(@employee) %> or <%= link_to "Cancel", {:action => :index} %>
+</p>
+<% end %>

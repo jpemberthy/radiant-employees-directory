@@ -1,0 +1,4 @@
+switch1 = <%= "employee_#{@employee.id}".to_json %>
+switch2 = <%= "employee_#{@switched.id}".to_json %>
+$(switch1).swap($(switch2));
+new Effect.Highlight(switch1, { startcolor: '#ffff99',endcolor: '#ffffff' })

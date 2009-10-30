@@ -1,0 +1,7 @@
+<li id="attachment_<%= employee_attachment.id %>" class="attachment">
+  <% unless employee_attachment.thumbnails.empty? %>
+	  <%= link_to image_tag(employee_attachment.thumbnails.last.public_filename), employee_attachment.public_filename, :class => 'icon' %>
+	<% end %>  
+  <%=h employee_attachment.short_description %>
+  <img src="/images/admin/minus.png" class="delete" alt="Delete"/>
+</li>
