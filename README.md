@@ -36,6 +36,33 @@ To set a profile image for an employee, please upload it as attachment from the 
 Usage
 ---
 
+* The employees collection tag, options: 
+`container` either "table" or "list". 
+`order` by default is set to "show_order", but you could use, "first_name", "last_name" ...
+`employee_type` either "regular" or "manager", by default is set to "regular".
+
+Examples:
+
+	Renders a short description of the employees using a thumbnail. 
+	
+	<table class="employees">
+	    <tbody> 
+	      <r:employees:collection container="table">
+	        <r:face_profile /> 
+	     </r:employees:collection>
+	    </tbody>
+	 </table>
+	
+	Renders a list of named based links that redirects to the individual employee view.
+	
+	<ul class="employees">
+	  <r:employees:collection container="list" order="first_name" employee_type="managers">
+	    <r:name_link />
+	  </r:employees:collection>
+	</ul>
+
+You can find these tags inside the `employee_tags.rb` file, you can easily edit or create new employee_tags according to your needs.
+
 Contributors
 ---
 
@@ -50,3 +77,8 @@ These people have contributed patches that have been added to the extension:
 [ta]: http://github.com/jpemberthy/radiant-employees/tarball/master
 [sb]: http://sergiobayona.com/
 [jp]: http://jpemberthy.github.com/
+
+Todo
+---
+Live Demo.
+Tests.
