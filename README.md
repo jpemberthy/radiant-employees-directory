@@ -20,11 +20,18 @@ After installing `page_attachments`.
 	
 Don't have `git`? Download the [tarball][ta]
 
-Restart your server, and there will be a new tab called "employees" in the admin interface
+Restart your server, and there will be a new tab called "employees" in the admin interface, and a new page "employee_template"
 
 Managing Employees
 ---
 
+From the new tab "employees" under admin, you will be able to create and update employees, by default when you are rendering a collection of employees they are ordered by the `show_order` attribute, but you can override this by using the defaults Radius tags, that will be described later.
+
+The extension has a controller to render dinamically an employee from the public side, the convention is to use this path: `/employees/employee-first_name-last_name` and the contents will be render based in the `employees_template`, You can specify the layout you wish to show with the employee information, to do that, please edit this line in the non-admin employees_controller:
+
+	radiant_layout 'your_site_layout' #put here your public layout name.
+	
+To set a profile image for an employee, please upload it as attachment from the admin section and set the description name as: `profile`. This image will be resized to be used as icon, thumbnail and profile_image.
 
 Usage
 ---

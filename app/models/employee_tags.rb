@@ -13,10 +13,6 @@ module EmployeeTags
     end
   end
   
-  # tag 'employee:type' do |tag|
-  #   tag.locals.type  = @employee.interventionist? ? "Interventionists" : "Management Team"
-  # end
-
   tag 'employees' do |tag|
     tag.expand
   end
