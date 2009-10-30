@@ -17,6 +17,7 @@ class EmployeesExtension < Radiant::Extension
   def activate
     admin.tabs.add "Employees", "/admin/employees", :after => "Layouts", :visibility => [:all]
     Page.send :include, EmployeeTags
+    PageAttachment.send :belongs_to, :employee
   end
   
   def deactivate
