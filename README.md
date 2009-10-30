@@ -36,10 +36,11 @@ To set a profile image for an employee, please upload it as attachment from the 
 Usage
 ---
 
-* The employees collection tag, options: 
-`container` either "table" or "list". 
-`order` by default is set to "show_order", but you could use, "first_name", "last_name" ...
-`employee_type` either "regular" or "manager", by default is set to "regular".
+The employees collection tag, options:
+
+* `container` either "table" or "list". 
+* `order` by default is set to "show_order", but you could use, "first_name", "last_name" ...
+* `employee_type` either "regular" or "manager", by default is set to "regular".
 
 Examples:
 
