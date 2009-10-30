@@ -15,8 +15,8 @@ After installing `page_attachments`.
 
 	cd /path/to/radiant
 	git clone git://github.com/jpemberthy/radiant-employees.git vendor/extension/employees
-	rake radiant:employees:page_attachments:migrate
-	rake radiant:employees:page_attachments:update
+	rake radiant:extensions:employees:migrate
+	rake radiant:extensions:employees:update
 	
 Don't have `git`? Download the [tarball][ta]
 
