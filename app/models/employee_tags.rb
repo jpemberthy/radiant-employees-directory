@@ -13,6 +13,10 @@ module EmployeeTags
     end
   end
   
+  # tag 'employee:type' do |tag|
+  #   tag.locals.type  = @employee.interventionist? ? "Interventionists" : "Management Team"
+  # end
+
   tag 'employees' do |tag|
     tag.expand
   end
@@ -31,7 +35,7 @@ module EmployeeTags
         end
         result << "</tr>"
       end
-    elsif tag.attr['container'] == "list"
+    else
       collection.each do |employee|
         tag.locals.employee = employee
         result << tag.expand
@@ -50,5 +54,11 @@ module EmployeeTags
     employee = tag.locals.employee
     %{<li><a href="#{employee.detailed_profile}">#{employee.name}</a></li>}
   end
-    
+  
+  tag 'employees:collection:full_profile' do |tag|
+    employee = tag.locals.employee
+    %{<p><span class="bold"> #{employee.name}.</span> <em> #{employee.title} </em> <br/>
+    <img alt="#{employee.first_name}" src="#{employee.profile_thumbnail.try(:public_filename)}"/> #{employee.extended_profile}.</p>}
+  end
+  
 end
