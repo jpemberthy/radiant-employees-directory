@@ -1,8 +1,8 @@
 class Employee < ActiveRecord::Base
   has_many :page_attachments
   after_create :set_order
-  named_scope :managers, :conditions => { :management => 1 }, :order => 'show_order ASC'
-  named_scope :interventionists, :conditions => { :management => 0 }, :order => 'show_order ASC'
+  named_scope :managers, :conditions => { :management => true }, :order => 'show_order ASC'
+  named_scope :interventionists, :conditions => { :management => false }, :order => 'show_order ASC'
   
   accepts_nested_attributes_for :page_attachments, :allow_destroy => true
   
