@@ -11,7 +11,7 @@ Installation
 
 Before you install `employees` ensure you already have installed [page_attachments][pa] 
 
-After installing the `page_attachments` extension, you should configure it  to properly work with the `employees` extension (basically it's about the icon and thumbnail features), [this][th] is an example of how your `page_attachments.rb` file should look like.
+After installing the `page_attachments` extension, you should configure it  to properly work with the `employees` extension (basically it's about the icon and thumbnail features), [this][th] is an example of how your `page_attachments.rb` file should look like. Now that you have a valid `page_attachments` setup you can install the `employees` extension:
 
 	cd /path/to/radiant
 	git clone git://github.com/jpemberthy/radiant-employees.git vendor/extensions/employees
