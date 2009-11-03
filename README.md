@@ -11,7 +11,7 @@ Installation
 
 Before you install `employees` ensure you already have installed [page_attachments][pa] 
 
-After installing `page_attachments`.
+After installing the `page_attachments` extension, you should configure it  to properly work with the `employees` extension (basically it's about the icon and thumbnail features), [this][th] is an example of how your `page_attachments.rb` file should look like.
 
 	cd /path/to/radiant
 	git clone git://github.com/jpemberthy/radiant-employees.git vendor/extensions/employees
@@ -78,6 +78,7 @@ These people have contributed patches that have been added to the extension:
 [ta]: http://github.com/jpemberthy/radiant-employees/tarball/master
 [sb]: http://sergiobayona.com/
 [jp]: http://jpemberthy.github.com/
+[th]: https://gist.github.com/f4f7c6b6b352404d30a5
 
 Todo
 ---
