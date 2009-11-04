@@ -9,7 +9,7 @@ A [Radiant][rd] Extension by [Martian interactive][mi] that adds employees manag
 Installation
 ---
 
-Before you install `employees` ensure you already have installed [page_attachments][pa] 
+Before you install `employees` ensure you already have installed the following extensions: [page_attachments][pa] and [share_layouts][sl]
 
 After installing the `page_attachments` extension, you should configure it  to properly work with the `employees` extension (basically it's about the icon and thumbnail features), [this][th] is an example of how your `page_attachments.rb` file should look like. Now that you have a valid `page_attachments` setup you can install the `employees` extension:
 
@@ -79,6 +79,7 @@ These people have contributed patches that have been added to the extension:
 [sb]: http://sergiobayona.com/
 [jp]: http://jpemberthy.github.com/
 [th]: https://gist.github.com/f4f7c6b6b352404d30a5
+[sl]: http://github.com/radiant/radiant-share-layouts-extension
 
 Todo
 ---
