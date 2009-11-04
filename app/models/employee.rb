@@ -27,7 +27,7 @@ class Employee < ActiveRecord::Base
   end
   
   def detailed_profile
-    "/employees/employee-#{first_name.downcase}-#{last_name.downcase}"
+    "/employees/employee-#{first_name}-#{last_name}"
   end
   
   def profile_thumbnail_filename

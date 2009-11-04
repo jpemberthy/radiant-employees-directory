@@ -11,7 +11,7 @@ class EmployeesExtension < Radiant::Extension
       admin.resources :employees
     end
     
-    map.connect 'employees/:name', :controller => 'employees', :action => 'show', :requirements => { :name => /employee([-a-z0-9]+)/ }
+    map.connect 'employees/:name', :controller => 'employees', :action => 'show', :requirements => { :name => /employee([-a-zA-Z0-9]+)/ }
   end
   
   def activate
