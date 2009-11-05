@@ -35,10 +35,10 @@ class Employee < ActiveRecord::Base
   end
   
   def kind
-    self.interventionist? ? "Interventionists" : "Management Team"
+    self.regular? ? "Interventionists" : "Management Team"
   end
   
-  def interventionist?
+  def regular?
     !management
   end
   

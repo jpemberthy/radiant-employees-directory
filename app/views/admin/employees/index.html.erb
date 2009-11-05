@@ -24,7 +24,7 @@
         <td><%= link_to employee.name, edit_admin_employee_url(:id => employee.id) %></td>
         <td><%=h employee.title %> </td>
 		<td><%=h employee.email %> </td>
-		<td><%= employee.management ? "Management and Office Staff" : "Interventionist" %></td>
+		<td><%= employee.management ? "Management and Office Staff" : "Regular" %></td>
 		<td><%= link_to_remote "up", :url => {:action => :toggle_order, :id => employee.id, :order => :up } %> | 
 			<%= link_to_remote "down", :url => {:action => :toggle_order, :id => employee.id, :order => :down } %>
 	    </td>
