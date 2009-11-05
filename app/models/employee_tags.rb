@@ -23,7 +23,7 @@ module EmployeeTags
   
   tag 'employees:collection' do |tag|
     result = []
-    collection = tag.attr['employee_type'] == "managers" ? Employee.managers : Employee.interventionists
+    collection = tag.attr['employee_type'] == "managers" ? Employee.managers : Employee.regulars
     collection = collection.find(:all, :order => tag.attr['order']) if tag.attr['order']
     
     if tag.attr['container'] == "table"
