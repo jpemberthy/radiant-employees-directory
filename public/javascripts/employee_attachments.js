@@ -33,3 +33,20 @@ document.observe("dom:loaded", function() {
     })
   })
 })
+
+// Swap extension.
+var swapMethod = {
+	swap: function(element, el) {
+		element = $(element);
+		el = $(el);
+
+		if (element == el) return element;
+
+		var clone = el.cloneNode(false); // no need to clone deep
+		Element.replace(element, clone);
+		Element.replace(el, element);
+		Element.replace(clone, el); // make sure references (like event observers) are kept
+		return element;
+	}
+}
+Element.addMethods(swapMethod);
