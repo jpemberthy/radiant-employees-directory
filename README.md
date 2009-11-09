@@ -6,6 +6,16 @@ About
 
 A [Radiant][rd] Extension by [Martian interactive][mi] that adds employees management. Employees have name, email, profile, extended profile and more fields.
 
+Demo Application
+---
+
+There is a demo [application][da] that also is [running online][ro], don't worry to mess up the database, it's is recreated every hour.
+
+You can login to the [admin section][as] with the Radiant's default username/password.
+
+	username: admin
+	password: radiant
+	
 Installation
 ---
 
@@ -18,7 +28,7 @@ After installing the `page_attachments` extension, you should configure it  to p
 	rake radiant:extensions:employees:migrate
 	rake radiant:extensions:employees:update
 	
-Don't have `git`? Download the [tarball][ta]
+Don't have `git`? Download the extension as [tarball][ta]
 
 Restart your server, and there will be a new tab called "employees" in the admin interface, and a new page "employee_template"
 
@@ -80,8 +90,9 @@ These people have contributed patches that have been added to the extension:
 [jp]: http://jpemberthy.github.com/
 [th]: https://gist.github.com/f4f7c6b6b352404d30a5
 [sl]: http://github.com/radiant/radiant-share-layouts-extension
+[da]: http://github.com/jpemberthy/radiant-employees-demo
+[ro]: http://radiant-employees.heroku.com/
 
 Todo
 ---
-Live Demo.
 Tests.
