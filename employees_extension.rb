@@ -3,8 +3,8 @@
 
 class EmployeesExtension < Radiant::Extension
   version "1.0"
-  description "Employees manager"
-  url "http://yourwebsite.com/employees"
+  description "employees-directory manager"
+  url "http://github.com/jpemberthy/radiant-employees-directory"
   
   define_routes do |map|
     map.namespace :admin, :member => { :remove => :get, :toggle_order => :post } do |admin|
