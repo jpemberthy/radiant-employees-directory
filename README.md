@@ -9,7 +9,7 @@ A [Radiant][rd] Extension by [Martian interactive][mi] that adds employees manag
 Demo Application
 ---
 
-There is a demo [application][da] that also is [running online][ro], don't worry to mess up the database, it's is recreated every hour.
+There is a demo [application][da] that's [running online][ro], don't worry to mess up the database, it's is recreated every hour.
 
 You can login to the [admin section][as] with the Radiant's default username/password.
 
@@ -92,6 +92,7 @@ These people have contributed patches that have been added to the extension:
 [sl]: http://github.com/radiant/radiant-share-layouts-extension
 [da]: http://github.com/jpemberthy/radiant-employees-demo
 [ro]: http://radiant-employees.heroku.com/
+[as]: http://radiant-employees.heroku.com/admin/login
 
 Todo
 ---
