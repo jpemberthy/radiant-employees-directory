@@ -91,8 +91,8 @@ These people have contributed patches that have been added to the extension:
 [th]: https://gist.github.com/f4f7c6b6b352404d30a5
 [sl]: http://github.com/radiant/radiant-share-layouts-extension
 [da]: http://github.com/jpemberthy/radiant-employees-demo
-[ro]: http://radiant-employees.heroku.com/
-[as]: http://radiant-employees.heroku.com/admin/login
+[ro]: http://radiant-employees.mertd.com/
+[as]: http://radiant-employees.mertd.com/admin/login
 
 Todo
 ---
